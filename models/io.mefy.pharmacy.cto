@@ -78,7 +78,7 @@ asset MedicineMaster identified by medicineId {
   o String rxname
   o String description 
   o String manufacturer
-  o DrugType drugtype 
+  --> DrugType drugtype 
   o String condition 
   o String precaution
   o String direction
