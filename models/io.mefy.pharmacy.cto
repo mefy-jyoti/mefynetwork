@@ -43,6 +43,53 @@ asset Pharmacy identified by tradeLicenseId {
 }
 
 
+/** DRUG TYPE **/
+asset DrugType identified by typeId {
+  o String typeId
+  o String description
+}
+
+/** manufacturer **/
+asset Manufactorer identified by manufacturerId {
+  o String manufacturerId
+  o String name 
+  o Address address
+  o String contactName
+  o String contactNumber
+  o String gstin
+}
+
+/** Vendor / Supplier - who supplies medicine to the shops **/
+asset Vendor identified by vendorId {
+  o String vendorId
+  o String name 
+  o Address address
+  o String contactName
+  o String contactNumber
+  o String gstin
+}
+
+
+/** Master medicine items **/
+asset MedicineMaster identified by medicineId {
+  o String medicineId
+  o String name 
+  o String form
+  o String rxname
+  o String description 
+  o String manufacturer
+  o DrugType drugtype 
+  o String condition 
+  o String precaution
+  o String direction
+  o String strength 
+  o String unit 
+  o String quantity 
+  o String substitute 
+  o String gstrate
+}
+
+
 transaction SampleTransaction {
   
 }
