@@ -3,7 +3,6 @@ namespace io.mefy.pharmacy
 /** PARTICIPANT USER MODEL */
 participant User identified by phoneNumber {
   o String phoneNumber 
-  o Role role 
   o String name 
   o UserPharmacy[] pharmacy optional
 }
@@ -22,12 +21,11 @@ asset Pharmacy identified by pharmacyId {
   o String pharmacyName 
   o String primaryContact 
   o String alternateContact optional
-  o String email
-  o String gstNo 
+  o String email 
+  o String gstNo
   o String degreeFile
   o String drugLicense
   o String tradeLicense
-
 }
 
 /**  ADDRESS FIELD FOR PHARMACY  */
