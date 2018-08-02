@@ -15,8 +15,8 @@ enum Role {
 }
 
 /* PHARMACY ASSEST MODEL FEILDS*/
-asset Pharmacy identified by pharmacyId {
-  o String pharmacyId 
+asset Pharmacy identified by tradeLicenseId {
+  o String tradeLicenseId 
   o Address address optional
   o String pharmacyName 
   o String primaryContact 
