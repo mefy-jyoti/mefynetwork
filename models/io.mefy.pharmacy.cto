@@ -50,23 +50,21 @@ asset DrugType identified by typeId {
 }
 
 /** manufacturer **/
-asset Manufactorer identified by manufacturerId {
-  o String manufacturerId
+asset Manufactorer identified by gstin {
+  o String gstin
   o String name 
   o Address address
   o String contactName
   o String contactNumber
-  o String gstin
 }
 
 /** Vendor / Supplier - who supplies medicine to the shops **/
-asset Vendor identified by vendorId {
-  o String vendorId
+asset Vendor identified by gstin {
+  o String gstin
   o String name 
   o Address address
   o String contactName
   o String contactNumber
-  o String gstin
 }
 
 
