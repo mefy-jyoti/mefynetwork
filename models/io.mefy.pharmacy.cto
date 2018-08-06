@@ -4,6 +4,7 @@ namespace io.mefy.pharmacy
 participant User identified by phoneNumber {
   o String phoneNumber 
   o String name 
+  o Role role
   o UserPharmacy[] pharmacy optional
 }
 
@@ -39,7 +40,7 @@ asset Pharmacy identified by tradeLicenseId {
 /* CREATE OBJECT FOR PHARMACY*/
  concept UserPharmacy {
   o String role 
-  --> Pharmacy pharmacyId
+  --> Pharmacy tradeLicenseId
 }
 
 
