@@ -40,7 +40,7 @@ asset UserPharmacy identified by recordId{
     o String recordId 
     --> User user 
     --> Pharmacy pharmacy
-    o String role 
+    o Role role 
 }
 
 
