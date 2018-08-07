@@ -1,0 +1,6 @@
+query userPharmacy{
+    description: "Select all the pharmacies and role of the current user in the pharmacy using user id / phone number of the user"
+    statement:
+        SELECT io.mefy.pharmacy.UserPharmacy
+            WHERE (_$userID == user)
+}
