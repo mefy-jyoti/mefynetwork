@@ -47,6 +47,7 @@ asset UserPharmacy identified by recordId{
 /** DRUG TYPE **/
 asset DrugType identified by typeId {
   o String typeId
+  o String type
   o String description
 }
 
