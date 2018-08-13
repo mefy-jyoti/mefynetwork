@@ -52,7 +52,7 @@ asset DrugType identified by typeId {
 }
 
 /** manufacturer **/
-asset Manufactorer identified by gstin {
+asset Manufacturer identified by gstin {
   o String gstin
   o String name 
   o Address address
