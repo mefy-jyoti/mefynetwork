@@ -47,11 +47,12 @@ asset UserPharmacy identified by recordId{
 /** DRUG TYPE **/
 asset DrugType identified by typeId {
   o String typeId
+  o String type
   o String description
 }
 
 /** manufacturer **/
-asset Manufactorer identified by gstin {
+asset Manufacturer identified by gstin {
   o String gstin
   o String name 
   o Address address
@@ -76,7 +77,7 @@ asset MedicineMaster identified by medicineId {
   o String form
   o String rxname
   o String description 
-  o String manufacturer
+  --> Manufacturer manufacturer
   --> DrugType drugtype 
   o String condition 
   o String precaution
