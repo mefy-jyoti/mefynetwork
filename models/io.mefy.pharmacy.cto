@@ -85,7 +85,7 @@ asset MedicineMaster identified by medicineId {
   o String strength 
   o String unit 
   o String quantity 
-  --> MedicineMaster[] substitute 
+  --> MedicineMaster[] substitute  optional
   o String gstrate
 }
 
