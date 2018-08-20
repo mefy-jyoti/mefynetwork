@@ -3,7 +3,11 @@
     "composer": "^0.19.12"
   },
   "name": "mefy",
+<<<<<<< HEAD
   "version": "0.0.15",
+=======
+  "version": "0.0.18",
+>>>>>>> 3e2fcc6c5fa37be53a06cc787f3303a0bdb79882
   "description": "medicine",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/mefy.bna",

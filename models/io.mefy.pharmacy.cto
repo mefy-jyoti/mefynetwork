@@ -85,10 +85,21 @@ asset MedicineMaster identified by medicineId {
   o String strength 
   o String unit 
   o String quantity 
-  o String substitute
+  --> MedicineMaster[] substitute  optional
   o String gstrate
 }
 
+/** Pharmacy items model**/
+asset PharmacyItem identified by itemId{
+  o String itemId
+  o String safetyStock optional
+  o String minMax      optional
+  o String leadTime    optional  
+  o String binId       optional
+  --> Pharmacy pharmacyId
+  --> MedicineMaster  medicineId
+  --> Vendor supplier      optional
+}
 
 transaction SampleTransaction {
   
