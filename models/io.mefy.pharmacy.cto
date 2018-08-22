@@ -9,7 +9,7 @@ participant User identified by phoneNumber {
 /*** AN ENUMERATED TYPE FOR USER ROLE FIELD */
 enum Role {
   o admin
-  o aacountant
+  o accountant
   o assistant
 }
 
@@ -98,7 +98,7 @@ asset PharmacyItem identified by itemId{
   o String binId       optional
   --> Pharmacy pharmacyId
   --> MedicineMaster  medicineId
-  --> Vendor supplier      optional
+  --> Vendor supplier    
 }
 
 transaction SampleTransaction {
