@@ -1,0 +1,163 @@
+namespace io.mefy.commonModel
+
+/*********************PARTICIPANT USER-DOCTOR OR INDIVIDUAL******** **/
+participant User identified by userId{
+o String userId 
+o String email   optional
+o String phoneNumber 
+o Integer otp            optional
+o Integer otpExpiresIn    optional
+o String role
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+--> User userId   optional
+}
+
+
+
+/***************ASSET ECONSULT *******************/
+asset eConsult identified by consultId{
+o String consultId 
+--> doctor doctorId
+--> individual individualId
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+
+/*******    ASSET ACCOUNT     *********/
+asset account identified by accountId {
+o String accountId
+--> doctor doctorId
+--> individual individualId
+o String accountHolderName
+o String ifscCode
+o String accountName
+o String accountType
+o kyc[{}] kycDoc
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+/*** CONCEPT FOR KYCDOCS  *****/
+concept kyc{
+    --> Image imageId
+}
+
+/***************  ASSET BILL  ************/
+asset bill identified by billId {
+o String billId
+--> prescription ePrescriptionId
+--> doctor doctorId
+--> individual individualId
+o Integer grandTotal
+o Status status
+o billInfo[] bill
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+/*** AN ENUMERATED TYPE FOR STATUS*/
+enum Status {
+  o Processing
+  o Processed
+}
+
+/**** CONCEPT FOR BILL ***/
+concept billInfo {
+    o String particular
+    o String amount
+}
+
+/*****ASSET ORDER    customerid type nedds to be changed ****/
+asset order identified by orderId {
+o String orderId 
+--> doctor doctorId
+o String paymentType
+o String paymentAmount
+o string CustomerId     
+o String referalCode
+o status default="Pending"    
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+/******ASSET APPOINTMENT ******/
+asset appointment identified by appointmentId {
+o string appointmentId
+--> eConsult eConsultId
+--> doctor doctorId
+--> individual individualId
+o string clinicName
+--> clinic clinicId
+o clinicStatus status
+o String patientName
+o String eventName
+o string eventDescription
+o String appointmentType
+o String appointmentTimeFrom
+o String appointmentTimeTo
+o DateTime appointmentDate
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+/* APPOINTMENT STATUS */
+enum clinicStatus{
+    o New
+    o Conformed
+    o Tentative
+    o Cancelled
+}
+
+/** ASSET TRANSACTION**/
+asset transaction identified by transactionId {
+o String transactionId
+o String transactionType
+o String performedBy
+o String accountHead
+o String performedByRole
+o String reference
+o String paymentAmount
+o String paymentType
+o String CrDr
+o String status
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+/**ASSET TRANSACTION MASTER **/
+asset transactionMaster identified by transactionMasterId {
+   o String  transactionMasterId
+   o String transactionType
+   o Items items
+   o Integer enabled default=1
+}
+
+/*concept items**/
+concept Items {
+    o String head
+    o Integer percentage
+    o String CrDr
+} 
