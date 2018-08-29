@@ -12,8 +12,8 @@ asset advice identified by adviceId {
   o String refferedDoctor
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
@@ -26,8 +26,8 @@ asset lifeStyle identified by lifeStyleId {
   o String lifeStyleId 
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
@@ -44,8 +44,8 @@ asset prescribeMedicine identified by prescribeMedicineId {
   o String instructions
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
@@ -59,8 +59,8 @@ asset diagnosis identified by diagnosisId {
   o String diagnosisBrief
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
@@ -75,8 +75,8 @@ asset recommended identified by recommendedId {
   o String testDescription
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
@@ -90,8 +90,8 @@ asset instruction identified by instructionId {
   o String advice
   o String createdBy optional
   o String updatedBy optional
-  o String createdDate optional
-  o String updatedDate optional
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
   o String enabled default="1"
 }
 
