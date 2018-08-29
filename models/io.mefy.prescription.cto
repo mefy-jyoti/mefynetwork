@@ -1,0 +1,101 @@
+namespace io.mefy.prescription
+
+
+
+/**  advice follow up  **/
+
+asset advice identified by adviceId {
+  o String adviceId
+  o String day
+  o String week 
+  o String month
+  o String refferedDoctor
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+
+/**
+   Life style model
+**/
+
+asset lifeStyle identified by lifeStyleId {
+  o String lifeStyleId 
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+
+/**
+   Prescribe medicine model
+**/
+
+asset prescribeMedicine identified by prescribeMedicineId {
+  o String prescribeMedicineId 
+  o String medicineName
+  o String dosage
+  o String days
+  o String instructions
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+/**
+   Diagnosis Model
+**/
+
+asset diagnosis identified by diagnosisId {
+  o String diagnosisId 
+  o String diagnosisFor
+  o String diagnosisBrief
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+/** 
+    Test Recommended
+**/
+
+asset recommended identified by recommendedId {
+  o String recommendedId 
+  o String categoryType
+  o String testName
+  o String testDescription
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+/**
+  Instructions model
+**/
+
+
+asset instruction identified by instructionId {
+  o String instructionId
+  o String advice
+  o String createdBy optional
+  o String updatedBy optional
+  o String createdDate optional
+  o String updatedDate optional
+  o String enabled default="1"
+}
+
+
+
+
+
