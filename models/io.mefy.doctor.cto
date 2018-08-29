@@ -1,4 +1,5 @@
 namespace io.mefy.doctor
+import io.mefy.pharmacy.*
 
 /*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
 enum Availability {
@@ -10,17 +11,17 @@ enum Availability {
 /*** AN ENUMERATED TYPE FOR CLINIC  FIELD */
 enum BookingStatus {
   o Availability
-  o Not Available
+  o NotAvailable
 }
 
 /* DOCTOR PROFILE ASSEST MODEL FEILDS*/
 asset doctor identified by doctorId {
-  --> doctorRegistration doctorId
+  o String doctorId
   --> User userId 
   o String name
   o String gender 
   o String dob
-  --> Image profileImage
+  /*--> Image profileImage */
   o Integer location  optional
   o Integer eConsultFee
   o String subscription optional
@@ -66,6 +67,7 @@ asset doctorRegistration identified by doctorId {
 
 /* CLINIC ASSEST MODEL FEILDS*/
 asset clinic identified by clinicId {
+  o String clinicId
   --> doctor doctorId
   o String clinicName 
   o String phoneNumber
