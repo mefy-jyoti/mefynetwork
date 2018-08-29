@@ -1,0 +1,170 @@
+namespace io.mefy.extra
+
+
+/**
+   Referal asset
+**/
+
+asset referal identified by referalId {
+  o String referalId
+  o String name 
+  o String code 
+  o String createdBy optional
+  o String updatedBy optional 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o String enabled default="1"
+}
+
+/**
+   Subscription model
+**/
+
+asset subscription identified by subscriptionId{
+  o String subscriptionId
+  o String name 
+  o String[] features
+  o Integer actualPrice
+  o Integer discountedPrice
+  o String createdBy optional
+  o String updatedBy optional 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o String enabled default="1"
+} 
+
+/** 
+   Contact US asset
+ **/
+
+ asset contact identified by contactId {
+   o String contactId
+   o String firstName
+   o String lastName
+   o String email
+   o String phoneNumber
+   o String message
+   o DateTime createdDate optional
+   o DateTime updatedDate optional
+   o String enabled default="1"
+ }
+
+
+ /** mefy Contact **/
+
+ asset mefyContact identified by mefyContactId {
+   o String mefyContactId
+   o String name 
+   o String email
+   o String message 
+   o DateTime createdDate optional
+   o DateTime updatedDate optional
+   o String enabled default="1"
+ }
+
+ /** 
+   Pre Registration
+  **/
+
+enum Gender {
+  o male
+  o female
+  o other
+}
+
+  asset preRegistration identified by preRegistrationId {
+    o String preRegistrationId
+    o String name 
+    o Gender gender
+    o String email 
+    o String phoneNumber 
+    o Integer otp 
+    o String createdBy optional
+    o String enabled default="1"
+  }
+
+  /**
+     Question Model / asset
+  **/
+
+concept QOptions {
+  o String name 
+  o String weightage
+  o String answerType
+  --> Question nextQuestion
+}  
+
+asset Question identified by QuestionId {
+  o String QuestionId
+  o QOptions options 
+  --> Question parentId 
+  o Boolean isParent
+  o String condition
+  o String enabled 
+  o String groupId
+  o String background  
+  o String questionType
+  o String shortQuestion
+  o String longQuestion
+}
+
+/** 
+   Response Model 
+ **/
+
+ concept ResponseC {
+   o String response
+ }
+
+ asset Response identified by ResponseId {
+   o String ResponseId
+   o String individualId
+   o Integer counter
+   --> Question nextQuestionId
+   o Response response 
+ }
+
+
+/** 
+   City Search Model 
+ **/
+
+concept Geo {
+  o String latitude
+  o String longitude 
+}
+
+asset City identified by CityId{
+   o String CityId
+   o String name 
+   o Geo geo 
+ }
+
+ /** 
+    Spirometer Model 
+  **/
+
+  asset spirometer identified by spirometerId {
+    o String spirometerId 
+    o Gender gender 
+    o String maxAge 
+    o String minAge 
+    o String minHeight 
+    o String maxHeight
+    o String fev1
+    o String pef 
+    o String createdBy optional
+    o String updatedBy optional
+    o DateTime createdDate optional
+    o DateTime updatedDate optional
+    o String enabled default="1"
+  }
+
+  
+
+
+
+
+
+
+
