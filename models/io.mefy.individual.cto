@@ -1,5 +1,8 @@
 namespace io.mefy.individual
 
+import io.mefy.pharmacy.User
+import io.mefy.extra.subscription
+
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
 o String individualId
@@ -9,7 +12,7 @@ o String gender
 o String married
 o String email
 o String address
---> Image profileImage
+o String profileImage
 o String dob
 o String callerId
 o Integer credit
