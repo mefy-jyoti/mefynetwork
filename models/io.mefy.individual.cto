@@ -1,0 +1,40 @@
+namespace io.mefy.individual
+
+/**CHANEGES TO BE MADE**/
+asset individual identified by individualId {
+o String individualId
+-->User userId
+o String name
+o String gender
+o String married
+o String email
+o String address
+--> Image profileImage
+o String dob
+o String callerId
+o Integer credit
+--> subscription subscription
+--> individual referredBy
+o String referal
+o String location
+o String phoneNumber
+o String healthPoint
+o String bloodGroup
+o String refferred
+o DateTime subscriptionStartDate
+o DateTime subscriptionEndDate
+o Integer edgeEnable
+o String socketId
+o Family[] family
+o String[] HealthRecord
+o String createdBy  optional
+o String updatedBy  optional
+o DateTime createdDate  optional
+o DateTime updatedDate   optional
+o Integer enabled default=1
+}
+
+concept Family {
+    o String relation
+    -->individual profile
+}
