@@ -1,0 +1,86 @@
+namespace io.mefy.doctor
+
+/*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
+enum Availability {
+  o Online
+  o Offline
+  o Busy
+}
+
+/*** AN ENUMERATED TYPE FOR CLINIC  FIELD */
+enum BookingStatus {
+  o Availability
+  o Not Available
+}
+
+/* DOCTOR PROFILE ASSEST MODEL FEILDS*/
+asset doctor identified by doctorId {
+  --> doctorRegistration doctorId
+  --> User userId 
+  o String name
+  o String gender 
+  o String dob
+  --> Image profileImage
+  o Integer location  optional
+  o Integer eConsultFee
+  o String subscription optional
+  o Integer practicingSince
+  o String[] educationl
+  o String email 
+  o String registrationNumber
+  o String year
+  o String address
+  o String city 
+  o String [] language
+  o String issuingAuthority
+  o String [] speciality
+  o String callerId
+  o String state
+  o Availability availability 
+  o String credit default = "0"
+  o String socketId
+  o String createdBy
+  o String updatedBy 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o Integer enabled default = 1
+}
+
+
+/* DOCTOR REGISTRATION ASSEST MODEL FEILDS*/
+asset doctorRegistration identified by doctorId {
+  o String doctorId
+  o String name
+  o String qualification 
+  o String email
+  o String phoneNumber
+  o Integer otp
+  o String city
+  o String [] language 
+  o String [] speciality
+  o Integer medicalCouncilNumber 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o Integer enabled default = 1
+}
+
+/* CLINIC ASSEST MODEL FEILDS*/
+asset clinic identified by clinicId {
+  --> doctor doctorId
+  o String clinicName 
+  o String phoneNumber
+  o String city
+  o String address
+  o String pin
+  o String fee
+  o String startTime
+  o String endTime
+  o String [] weekDays
+  o  BookingStatus bookingStatus
+  o String availability default = "open"
+  o String createdBy
+  o String updatedBy 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o Integer enabled default = 1
+}
