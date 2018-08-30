@@ -2,9 +2,8 @@ namespace io.mefy.commonModel
 
 import io.mefy.doctor.doctor
 import io.mefy.individual.individual
-imort io.mefy.prescription.prescription
 import io.mefy.doctor.clinic
-
+import io.mefy.prescription.*
 /*********************PARTICIPANT USER-DOCTOR OR INDIVIDUAL******** **/
 participant User identified by userId{
 o String userId 
@@ -18,10 +17,10 @@ o String updatedBy  optional
 o DateTime createdDate  optional
 o DateTime updatedDate   optional
 o Integer enabled default=1
---> User userId   optional
+
 }
 
-
+/**--> User userId   optional*/
 
 /***************ASSET ECONSULT *******************/
 asset eConsult identified by consultId{
@@ -45,7 +44,7 @@ o String accountHolderName
 o String ifscCode
 o String accountName
 o String accountType
-o kyc[{}] kycDoc
+o kyc[] kycDoc
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -92,9 +91,9 @@ o String orderId
 --> doctor doctorId
 o String paymentType
 o String paymentAmount
-o string CustomerId     
+o String CustomerId     
 o String referalCode
-o status default="Pending"    
+o  String status default="Pending"    
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -104,16 +103,16 @@ o Integer enabled default=1
 
 /******ASSET APPOINTMENT ******/
 asset appointment identified by appointmentId {
-o string appointmentId
+o String appointmentId
 --> eConsult eConsultId
 --> doctor doctorId
 --> individual individualId
-o string clinicName
+o String clinicName
 --> clinic clinicId
 o clinicStatus status
 o String patientName
 o String eventName
-o string eventDescription
+o String eventDescription
 o String appointmentType
 o String appointmentTimeFrom
 o String appointmentTimeTo
@@ -166,3 +165,39 @@ concept Items {
     o Integer percentage
     o String CrDr
 } 
+
+asset Image identified by imageId {
+    o String imageId
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+asset  prescription identified by prescriptionId {
+    o String prescriptionId
+    -->appointment appointmentId
+    -->doctor doctorId
+    -->individual individualId
+    -->advice adviceId
+    -->lifeStyle  lifeStyleId
+    -->prescribeMedicine  medicineId  
+    -->diagnosis  diagnosisId   
+    --> instruction  specificInstructionId  
+    -->recommended recommendedId  
+    o prescriptionStatus status
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1  
+}
+
+enum prescriptionStatus{
+    o Consulting
+    o Inprogress
+    o Completed
+    o Processed
+    o Locked
+}

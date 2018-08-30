@@ -62,7 +62,7 @@ asset family identified by familyId {
 
 concept SufferingDate {
 o String  start
-o string end
+o String end
 }
 
 concept Duration {
@@ -91,10 +91,10 @@ asset medical identified by medicalId {
     o String medicalId
     o String individualId
     o String sufferingFrom
-    o string healthRecordType
+    o String healthRecordType
     o String sympton
     o String currentStatus
-    --> medicine medicineId
+    -->medication[] medicineId
     o SufferingDate sufferingDate
     o Medicine medicine
     o Durations duration
@@ -116,9 +116,9 @@ concept Medicine {
     o String Dosage
     o String frequency
 }
-pharmacy
-asset medication pharmacyidentified by medicationId {
-   o String medicpharmacyationId
+
+asset medication identified by medicationId {
+   o String medicationId
    -->individual individualId
    o String  medicineName
    o String  dosage
@@ -151,12 +151,12 @@ asset immunization identified by immunizationId {
 }
 
 asset allergies identified by allergyId {
-    o string allergyId
+    o String allergyId
     o String individualId
-    -->medicine medicineId
+    -->medication medicineId
     o String startDate
     o String  allergyCondition
-    o String  healthRecordType
+    o String  healthRecordType default="Allergies"
     o String  severity
     o TreatmentTaken[] treatmentTaken
     o String createdBy  optional
@@ -202,7 +202,7 @@ asset vitalStats identified by vitalId {
     o String vitalId
     o DateTime loginTime
     -->individual individualId
-    O String healthRecordType default="VitalStats"
+    o String healthRecordType default="VitalStats"
     o String statType
     o String statValue
     o String createdBy  optional
