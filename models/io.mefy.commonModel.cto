@@ -54,7 +54,7 @@ o Integer enabled default=1
 
 /*** CONCEPT FOR KYCDOCS  *****/
 concept kyc{
-    --> Image imageId
+  o String  imageId
 }
 
 /***************  ASSET BILL  ************/
@@ -166,14 +166,14 @@ concept Items {
     o String CrDr
 } 
 
-asset Image identified by imageId {
-    o String imageId
-    o String createdBy  optional
-    o String updatedBy  optional
-    o DateTime createdDate  optional
-    o DateTime updatedDate   optional
-    o Integer enabled default=1
-}
+// asset Image identified by imageId {
+//     o String imageId
+//     o String createdBy  optional
+//     o String updatedBy  optional
+//     o DateTime createdDate  optional
+//     o DateTime updatedDate   optional
+//     o Integer enabled default=1
+// }
 
 asset  prescription identified by prescriptionId {
     o String prescriptionId

@@ -2,7 +2,7 @@ namespace io.mefy.individual
 
 import io.mefy.commonModel.User
 import io.mefy.extra.subscription
-import io.mefy.commonModel.Image
+
 
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
@@ -195,7 +195,7 @@ concept TreatmentDetails {
      o String  date
      o String description
      o String reportType
-     -->Image[] fileId
+     o String[] fileId
 }
 
 asset vitalStats identified by vitalId {
