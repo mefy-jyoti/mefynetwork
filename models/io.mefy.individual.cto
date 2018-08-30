@@ -41,3 +41,172 @@ concept Family {
     o String relation
     -->individual profile
 }
+
+asset family identified by familyId {
+    o String familyId
+    o String individualId
+    o String relation
+    o String healthRecordType
+    o String medicalCondition
+    o Integer currentStatus
+    o SufferingDate SufferingDate
+    o Duration Duration
+    o Notes[] notes
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept SufferingDate {
+o String  start
+o string end
+}
+
+concept Duration {
+ o Integer years
+ o Integer months
+}
+
+concept Notes{
+o String title
+o String date
+}
+
+asset familyMember identified by profileId {
+    o String profileId
+    o String name
+    o String dob
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+
+asset medical identified by medicalId {
+    o String medicalId
+    o String individualId
+    o String sufferingFrom
+    o string healthRecordType
+    o String sympton
+    o String currentStatus
+    --> medicine medicineId
+    o SufferingDate sufferingDate
+    o Medicine medicine
+    o Durations duration
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept Durations{
+ o Integer years
+ o Integer months
+ o Integer days 
+}
+
+concept Medicine {
+    o String medicineName
+    o String Dosage
+    o String frequency
+}
+
+asset medication identified by medicationId {
+   o String medicationId
+   -->individual individualId
+   o String  medicineName
+   o String  dosage
+   o String  days
+   o String medicationName
+   o String healthRecordType
+   o String frequency
+   o String adverseEffects   
+   o Integer currentStus 
+   o String createdBy  optional
+   o String updatedBy  optional
+   o DateTime createdDate  optional
+   o DateTime updatedDate   optional
+   o Integer enabled default=1
+}
+
+asset immunization identified by immunizationId {
+    o String immunizationId
+    -->individual profileId
+    o String vaccine
+    o Integer ageGroup
+    o String healthRecordType  default="Immunization"
+    o String scheduleDate
+    o Integer isDone  default=1
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+asset allergies identified by allergyId {
+    o string allergyId
+    o String individualId
+    -->medicine medicineId
+    o String startDate
+    o String  allergyCondition
+    o String  healthRecordType
+    o String  severity
+    o TreatmentTaken[] treatmentTaken
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept TreatmentTaken{
+    o String  name
+    o String  date
+    o String  description
+}
+
+
+asset surgical identified by surgicalId {
+    o String surgicalId
+    o String individualId
+    o String  disease
+    o String dateOfDiagnosis
+    o String  helathRecordType
+    o String  currentStatus
+    o String  signsAndSympton
+    o String  otherInformation
+    o TreatmentDetails[] treatmentDetails
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept TreatmentDetails {
+     o String name
+     o String  date
+     o String description
+     o String reportType
+     -->Image[] fileId
+}
+
+asset vitalStats identified by vitalId {
+    o String vitalId
+    o DateTime loginTime
+    -->individual individualId
+    O String healthRecordType default="VitalStats"
+    o String statType
+    o String statValue
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
