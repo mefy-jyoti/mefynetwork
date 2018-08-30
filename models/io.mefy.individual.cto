@@ -1,7 +1,8 @@
 namespace io.mefy.individual
 
-import io.mefy.pharmacy.User
+import io.mefy.commonModel.User
 import io.mefy.extra.subscription
+import io.mefy.commonModel.Image
 
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
@@ -115,9 +116,9 @@ concept Medicine {
     o String Dosage
     o String frequency
 }
-
-asset medication identified by medicationId {
-   o String medicationId
+pharmacy
+asset medication pharmacyidentified by medicationId {
+   o String medicpharmacyationId
    -->individual individualId
    o String  medicineName
    o String  dosage

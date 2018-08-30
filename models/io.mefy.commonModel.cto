@@ -1,5 +1,10 @@
 namespace io.mefy.commonModel
 
+import io.mefy.doctor.doctor
+import io.mefy.individual.individual
+imort io.mefy.prescription.prescription
+import io.mefy.doctor.clinic
+
 /*********************PARTICIPANT USER-DOCTOR OR INDIVIDUAL******** **/
 participant User identified by userId{
 o String userId 
