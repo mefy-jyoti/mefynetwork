@@ -25,8 +25,8 @@ o Integer enabled default=1
 /***************ASSET ECONSULT *******************/
 asset eConsult identified by consultId{
 o String consultId 
---> doctor doctorId
---> individual individualId
+--> doctor doctorId optional
+--> individual individualId  optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -38,13 +38,13 @@ o Integer enabled default=1
 /*******    ASSET ACCOUNT     *********/
 asset account identified by accountId {
 o String accountId
---> doctor doctorId
---> individual individualId
-o String accountHolderName
-o String ifscCode
-o String accountName
-o String accountType
-o kyc[] kycDoc
+--> doctor doctorId  optional
+--> individual individualId  optional
+o String accountHolderName  optional
+o String ifscCode  optional
+o String accountName  optional
+o String accountType  optional
+o kyc[] kycDoc      optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -60,12 +60,12 @@ concept kyc{
 /***************  ASSET BILL  ************/
 asset bill identified by billId {
 o String billId
---> prescription ePrescriptionId
---> doctor doctorId
---> individual individualId
-o Integer grandTotal
-o Status status
-o billInfo[] bill
+--> prescription ePrescriptionId  optional
+--> doctor doctorId  optional
+--> individual individualId optional
+o Integer grandTotal  optional
+o Status status  optional
+o billInfo[] bill   optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -88,12 +88,12 @@ concept billInfo {
 /*****ASSET ORDER    customerid type nedds to be changed ****/
 asset order identified by orderId {
 o String orderId 
---> doctor doctorId
-o String paymentType
-o String paymentAmount
-o String CustomerId     
-o String referalCode
-o  String status default="Pending"    
+--> doctor doctorId   optional
+o String paymentType  optional
+o String paymentAmount  optional
+o String CustomerId      optional 
+o String referalCode   optional
+o  String status default="Pending"      optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -104,19 +104,19 @@ o Integer enabled default=1
 /******ASSET APPOINTMENT ******/
 asset appointment identified by appointmentId {
 o String appointmentId
---> eConsult eConsultId
---> doctor doctorId
---> individual individualId
-o String clinicName
---> clinic clinicId
-o clinicStatus status
-o String patientName
-o String eventName
-o String eventDescription
-o String appointmentType
-o String appointmentTimeFrom
-o String appointmentTimeTo
-o DateTime appointmentDate
+--> eConsult eConsultId  optional
+--> doctor doctorId  optional
+--> individual individualId  optional
+o String clinicName  optional
+--> clinic clinicId  optional
+o clinicStatus status  optional
+o String patientName  optional
+o String eventName optional
+o String eventDescription  optional
+o String appointmentType  optional
+o String appointmentTimeFrom  optional
+o String appointmentTimeTo  optional
+o DateTime appointmentDate  optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -135,15 +135,15 @@ enum clinicStatus{
 /** ASSET TRANSACTION**/
 asset transaction identified by transactionId {
 o String transactionId
-o String transactionType
-o String performedBy
-o String accountHead
-o String performedByRole
-o String reference
-o String paymentAmount
-o String paymentType
-o String CrDr
-o String status
+o String transactionType  optional
+o String performedBy  optional
+o String accountHead  optional
+o String performedByRole  optional
+o String reference  optional
+o String paymentAmount  optional
+o String paymentType  optional
+o String CrDr  optional
+o String status  optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -154,9 +154,9 @@ o Integer enabled default=1
 /**ASSET TRANSACTION MASTER **/
 asset transactionMaster identified by transactionMasterId {
    o String  transactionMasterId
-   o String transactionType
-   o Items items
-   o Integer enabled default=1
+   o String transactionType  optional
+   o Items items  optional
+   o Integer enabled default=1 
 }
 
 /*concept items**/
@@ -177,16 +177,16 @@ concept Items {
 
 asset  prescription identified by prescriptionId {
     o String prescriptionId
-    -->appointment appointmentId
-    -->doctor doctorId
-    -->individual individualId
-    -->advice adviceId
-    -->lifeStyle  lifeStyleId
-    -->prescribeMedicine  medicineId  
-    -->diagnosis  diagnosisId   
-    --> instruction  specificInstructionId  
-    -->recommended recommendedId  
-    o prescriptionStatus status
+    --> appointment appointmentId  optional
+    --> doctor doctorId  optional
+    --> individual individualId  optional
+    --> advice adviceId  optional
+    --> lifeStyle  lifeStyleId  optional
+    --> prescribeMedicine  medicineId    optional
+    --> diagnosis  diagnosisId optional
+    --> instruction  specificInstructionId   optional
+    --> recommended recommendedId   optional
+    o prescriptionStatus status optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional

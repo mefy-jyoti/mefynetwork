@@ -7,8 +7,8 @@ namespace io.mefy.extra
 
 asset referal identified by referalId {
   o String referalId
-  o String name 
-  o String code 
+  o String name optional
+  o String code optional
   o String createdBy optional
   o String updatedBy optional 
   o DateTime createdDate optional
@@ -22,10 +22,10 @@ asset referal identified by referalId {
 
 asset subscription identified by subscriptionId{
   o String subscriptionId
-  o String name 
-  o String[] features
-  o Integer actualPrice
-  o Integer discountedPrice
+  o String name  optional
+  o String[] features optional
+  o Integer actualPrice optional
+  o Integer discountedPrice optional
   o String createdBy optional
   o String updatedBy optional 
   o DateTime createdDate optional
@@ -39,11 +39,11 @@ asset subscription identified by subscriptionId{
 
  asset contact identified by contactId {
    o String contactId
-   o String firstName
-   o String lastName
-   o String email
-   o String phoneNumber
-   o String message
+   o String firstName optional
+   o String lastName optional
+   o String email optional
+   o String phoneNumber optional
+   o String message optional
    o DateTime createdDate optional
    o DateTime updatedDate optional
    o String enabled default="1"
@@ -54,9 +54,9 @@ asset subscription identified by subscriptionId{
 
  asset mefyContact identified by mefyContactId {
    o String mefyContactId
-   o String name 
-   o String email
-   o String message 
+   o String name  optional
+   o String email optional
+   o String message  optional
    o DateTime createdDate optional
    o DateTime updatedDate optional
    o String enabled default="1"
@@ -74,11 +74,11 @@ enum Gender {
 
   asset preRegistration identified by preRegistrationId {
     o String preRegistrationId
-    o String name 
-    o Gender gender
-    o String email 
-    o String phoneNumber 
-    o Integer otp 
+    o String name  optional
+    o Gender gender optional
+    o String email optional
+    o String phoneNumber optional
+    o Integer otp optional
     o String createdBy optional
     o String enabled default="1"
   }
@@ -96,16 +96,16 @@ concept QOptions {
 
 asset Question identified by QuestionId {
   o String QuestionId
-  o QOptions options 
-  --> Question parentId 
-  o Boolean isParent
-  o String condition
-  o String enabled 
-  o String groupId
-  o String background  
-  o String questionType
-  o String shortQuestion
-  o String longQuestion
+  o QOptions options  optional
+  --> Question parentId optional
+  o Boolean isParent optional
+  o String condition optional
+  o String enabled optional
+  o String groupId optional
+  o String background   optional
+  o String questionType optional
+  o String shortQuestion optional
+  o String longQuestion optional
 }
 
 /** 
@@ -118,10 +118,10 @@ asset Question identified by QuestionId {
 
  asset Response identified by ResponseId {
    o String ResponseId
-   o String individualId
-   o Integer counter
-   --> Question nextQuestionId
-   o Response response 
+   o String individualId optional
+   o Integer counter optional
+   --> Question nextQuestionId optional
+   o Response response optional
  }
 
 
@@ -136,8 +136,8 @@ concept Geo {
 
 asset City identified by CityId{
    o String CityId
-   o String name 
-   o Geo geo 
+   o String name  optional
+   o Geo geo  optional
  }
 
  /** 
@@ -146,13 +146,13 @@ asset City identified by CityId{
 
   asset spirometer identified by spirometerId {
     o String spirometerId 
-    o Gender gender 
-    o String maxAge 
-    o String minAge 
-    o String minHeight 
-    o String maxHeight
-    o String fev1
-    o String pef 
+    o Gender gender  optional
+    o String maxAge  optional
+    o String minAge  optional
+    o String minHeight  optional
+    o String maxHeight optional
+    o String fev1 optional
+    o String pef optional
     o String createdBy optional
     o String updatedBy optional
     o DateTime createdDate optional

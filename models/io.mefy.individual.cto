@@ -7,30 +7,30 @@ import io.mefy.extra.subscription
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
 o String individualId
--->User userId
-o String name
-o String gender
-o String married
-o String email
-o String address
-o String profileImage
-o String dob
-o String callerId
-o Integer credit
---> subscription subscription
---> individual referredBy
-o String referal
-o String location
-o String phoneNumber
-o String healthPoint
-o String bloodGroup
-o String refferred
-o DateTime subscriptionStartDate
-o DateTime subscriptionEndDate
-o Integer edgeEnable
-o String socketId
-o Family[] family
-o String[] HealthRecord
+-->User userId optional
+o String name optional
+o String gender optional
+o String married optional
+o String email optional
+o String address optional
+o String profileImage optional
+o String dob optional
+o String callerId optional
+o Integer credit optional
+--> subscription subscription optional
+--> individual referredBy optional
+o String referal optional
+o String location optional
+o String phoneNumber optional
+o String healthPoint optional
+o String bloodGroup optional
+o String refferred optional
+o DateTime subscriptionStartDate optional
+o DateTime subscriptionEndDate optional
+o Integer edgeEnable optional
+o String socketId optional
+o Family[] family optional
+o String[] HealthRecord optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -45,14 +45,14 @@ concept Family {
 
 asset family identified by familyId {
     o String familyId
-    o String individualId
-    o String relation
-    o String healthRecordType
-    o String medicalCondition
-    o Integer currentStatus
-    o SufferingDate SufferingDate
-    o Duration Duration
-    o Notes[] notes
+    o String individualId optional
+    o String relation optional
+    o String healthRecordType optional
+    o String medicalCondition optional
+    o Integer currentStatus optional
+    o SufferingDate SufferingDate optional
+    o Duration Duration optional
+    o Notes[] notes optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
@@ -77,8 +77,8 @@ o String date
 
 asset familyMember identified by profileId {
     o String profileId
-    o String name
-    o String dob
+    o String name optional
+    o String dob optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
@@ -89,15 +89,15 @@ asset familyMember identified by profileId {
 
 asset medical identified by medicalId {
     o String medicalId
-    o String individualId
-    o String sufferingFrom
-    o String healthRecordType
-    o String sympton
-    o String currentStatus
-    -->medication[] medicineId
-    o SufferingDate sufferingDate
-    o Medicine medicine
-    o Durations duration
+    o String individualId optional
+    o String sufferingFrom optional
+    o String healthRecordType optional
+    o String sympton optional
+    o String currentStatus optional
+    --> medication[] medicineId optional
+    o SufferingDate sufferingDate optional
+    o Medicine medicine optional
+    o Durations duration optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
@@ -119,15 +119,15 @@ concept Medicine {
 
 asset medication identified by medicationId {
    o String medicationId
-   -->individual individualId
-   o String  medicineName
-   o String  dosage
-   o String  days
-   o String medicationName
-   o String healthRecordType
-   o String frequency
-   o String adverseEffects   
-   o Integer currentStus 
+   --> individual individualId
+   o String  medicineName optional
+   o String  dosage optional
+   o String  days optional
+   o String medicationName optional
+   o String healthRecordType optional
+   o String frequency optional
+   o String adverseEffects   optional 
+   o Integer currentStus  optional
    o String createdBy  optional
    o String updatedBy  optional
    o DateTime createdDate  optional
@@ -137,11 +137,11 @@ asset medication identified by medicationId {
 
 asset immunization identified by immunizationId {
     o String immunizationId
-    -->individual profileId
-    o String vaccine
-    o Integer ageGroup
+    --> individual profileId optional
+    o String vaccine optional
+    o Integer ageGroup optional
     o String healthRecordType  default="Immunization"
-    o String scheduleDate
+    o String scheduleDate optional
     o Integer isDone  default=1
     o String createdBy  optional
     o String updatedBy  optional
@@ -152,13 +152,13 @@ asset immunization identified by immunizationId {
 
 asset allergies identified by allergyId {
     o String allergyId
-    o String individualId
-    -->medication medicineId
-    o String startDate
-    o String  allergyCondition
+    o String individualId optional
+    --> medication medicineId optional
+    o String startDate optional
+    o String  allergyCondition optional
     o String  healthRecordType default="Allergies"
-    o String  severity
-    o TreatmentTaken[] treatmentTaken
+    o String  severity optional
+    o TreatmentTaken[] treatmentTaken optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
@@ -175,14 +175,14 @@ concept TreatmentTaken{
 
 asset surgical identified by surgicalId {
     o String surgicalId
-    o String individualId
-    o String  disease
-    o String dateOfDiagnosis
-    o String  helathRecordType
-    o String  currentStatus
-    o String  signsAndSympton
-    o String  otherInformation
-    o TreatmentDetails[] treatmentDetails
+    o String individualId optional
+    o String  disease optional
+    o String dateOfDiagnosis optional
+    o String  helathRecordType optional
+    o String  currentStatus optional
+    o String  signsAndSympton optional
+    o String  otherInformation optional
+    o TreatmentDetails[] treatmentDetails optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
@@ -200,11 +200,11 @@ concept TreatmentDetails {
 
 asset vitalStats identified by vitalId {
     o String vitalId
-    o DateTime loginTime
-    -->individual individualId
+    o DateTime loginTime optional
+    --> individual individualId optional
     o String healthRecordType default="VitalStats"
-    o String statType
-    o String statValue
+    o String statType optional
+    o String statValue optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
