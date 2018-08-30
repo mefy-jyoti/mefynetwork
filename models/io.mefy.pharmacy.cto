@@ -1,10 +1,11 @@
 namespace io.mefy.pharmacy
 
-/** PARTICIPANT USER MODEL */
-participant User identified by phoneNumber {
-  o String phoneNumber 
-  o String name 
-}
+import io.mefy.commonModel.User
+// /** PARTICIPANT USER MODEL */
+// participant User identified by phoneNumber {
+//   o String phoneNumber 
+//   o String name 
+// }
 
 /*** AN ENUMERATED TYPE FOR USER ROLE FIELD */
 enum Role {

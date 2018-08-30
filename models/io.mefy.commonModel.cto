@@ -1,4 +1,4 @@
-namespace io.mefy.commonModel
+namespace  io.mefy.commonModel
 
 import io.mefy.doctor.doctor
 import io.mefy.individual.individual
