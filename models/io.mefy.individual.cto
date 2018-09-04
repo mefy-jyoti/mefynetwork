@@ -38,3 +38,20 @@ concept Family {
     o String relation
     -->individual profile
 }
+/* VITAL STAT ASSEST MODEL FEILDS*/
+asset surgical identified by vitalId {
+  o DateTime loginTime   optional
+  -->  individual individualId 
+  o String name
+  o String qualification 
+  o String email
+  o String phoneNumber
+  o Integer otp
+  o String city
+  o String [] language 
+  o String [] speciality
+  o Integer medicalCouncilNumber 
+  o DateTime createdDate optional
+  o DateTime updatedDate optional
+  o Integer enabled default = 1
+}
