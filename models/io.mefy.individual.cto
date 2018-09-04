@@ -7,7 +7,7 @@ import io.mefy.extra.subscription
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
 o String individualId
--->User userId optional
+-->User userId 
 o String name 
 o String gender 
 o String city
