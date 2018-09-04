@@ -6,10 +6,10 @@ namespace io.mefy.prescription
 
 asset advice identified by adviceId {
   o String adviceId
-  o String day
-  o String week 
-  o String month
-  o String refferedDoctor
+  o String day optional
+  o String week  optional
+  o String month optional
+  o String refferedDoctor optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
@@ -38,10 +38,10 @@ asset lifeStyle identified by lifeStyleId {
 
 asset prescribeMedicine identified by prescribeMedicineId {
   o String prescribeMedicineId 
-  o String medicineName
-  o String dosage
-  o String days
-  o String instructions
+  o String medicineName optional
+  o String dosage optional
+  o String days optional
+  o String instructions optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
@@ -55,8 +55,8 @@ asset prescribeMedicine identified by prescribeMedicineId {
 
 asset diagnosis identified by diagnosisId {
   o String diagnosisId 
-  o String diagnosisFor
-  o String diagnosisBrief
+  o String diagnosisFor optional
+  o String diagnosisBrief optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
@@ -70,9 +70,9 @@ asset diagnosis identified by diagnosisId {
 
 asset recommended identified by recommendedId {
   o String recommendedId 
-  o String categoryType
-  o String testName
-  o String testDescription
+  o String categoryType optional
+  o String testName optional
+  o String testDescription optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
@@ -87,7 +87,7 @@ asset recommended identified by recommendedId {
 
 asset instruction identified by instructionId {
   o String instructionId
-  o String advice
+  o String advice optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional

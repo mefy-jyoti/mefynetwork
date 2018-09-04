@@ -1,5 +1,7 @@
 namespace io.mefy.doctor
-import io.mefy.pharmacy.*
+
+import io.mefy.commonModel.User
+import io.mefy.doctor.doctor
 
 /*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
 enum Availability {
@@ -17,31 +19,31 @@ enum BookingStatus {
 /* DOCTOR PROFILE ASSEST MODEL FEILDS*/
 asset doctor identified by doctorId {
   o String doctorId
-  --> User userId 
-  o String name
-  o String gender 
-  o String dob
-  /*--> Image profileImage */
+  --> User userId  optional
+  o String name  optional
+  o String gender  optional
+  o String dob  optional
+  o String profileImage  optional
   o Integer location  optional
-  o Integer eConsultFee
+  o Integer eConsultFee  optional
   o String subscription optional
-  o Integer practicingSince
-  o String[] educationl
-  o String email 
-  o String registrationNumber
-  o String year
-  o String address
-  o String city 
-  o String [] language
-  o String issuingAuthority
-  o String [] speciality
-  o String callerId
-  o String state
-  o Availability availability 
+  o Integer practicingSince  optional
+  o String[] educationl optional
+  o String email   optional
+  o String registrationNumber  optional
+  o String year  optional
+  o String address  optional
+  o String city  optional
+  o String [] language  optional
+  o String issuingAuthority  optional
+  o String [] speciality  optional
+  o String callerId  optional
+  o String state optional
+  o Availability availability  optional
   o String credit default = "0"
-  o String socketId
-  o String createdBy
-  o String updatedBy 
+  o String socketId optional
+  o String createdBy optional
+  o String updatedBy  optional
   o DateTime createdDate optional
   o DateTime updatedDate optional
   o Integer enabled default = 1
@@ -51,15 +53,15 @@ asset doctor identified by doctorId {
 /* DOCTOR REGISTRATION ASSEST MODEL FEILDS*/
 asset doctorRegistration identified by doctorId {
   o String doctorId
-  o String name
-  o String qualification 
-  o String email
-  o String phoneNumber
-  o Integer otp
-  o String city
-  o String [] language 
-  o String [] speciality
-  o Integer medicalCouncilNumber 
+  o String name optional
+  o String qualification optional
+  o String email optional
+  o String phoneNumber optional
+  o Integer otp optional
+  o String city optional
+  o String [] language  optional
+  o String [] speciality optional
+  o Integer medicalCouncilNumber  optional
   o DateTime createdDate optional
   o DateTime updatedDate optional
   o Integer enabled default = 1
@@ -68,20 +70,20 @@ asset doctorRegistration identified by doctorId {
 /* CLINIC ASSEST MODEL FEILDS*/
 asset clinic identified by clinicId {
   o String clinicId
-  --> doctor doctorId
-  o String clinicName 
-  o String phoneNumber
-  o String city
-  o String address
-  o String pin
-  o String fee
-  o String startTime
-  o String endTime
-  o String [] weekDays
-  o  BookingStatus bookingStatus
+  --> doctor doctorId optional
+  o String clinicName optional
+  o String phoneNumber optional
+  o String city optional
+  o String address optional
+  o String pin optional
+  o String fee optional
+  o String startTime optional
+  o String endTime optional
+  o String [] weekDays optional
+  o  BookingStatus bookingStatus optional
   o String availability default = "open"
-  o String createdBy
-  o String updatedBy 
+  o String createdBy optional
+  o String updatedBy optional
   o DateTime createdDate optional
   o DateTime updatedDate optional
   o Integer enabled default = 1

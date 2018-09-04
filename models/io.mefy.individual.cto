@@ -1,32 +1,36 @@
 namespace io.mefy.individual
 
+import io.mefy.commonModel.User
+import io.mefy.extra.subscription
+
+
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
 o String individualId
--->User userId
-o String name
-o String gender
-o String married
-o String email
-o String address
---> Image profileImage
-o String dob
-o String callerId
-o Integer credit
---> subscription subscription
---> individual referredBy
-o String referal
-o String location
-o String phoneNumber
-o String healthPoint
-o String bloodGroup
-o String refferred
-o DateTime subscriptionStartDate
-o DateTime subscriptionEndDate
-o Integer edgeEnable
-o String socketId
-o Family[] family
-o String[] HealthRecord
+-->User userId optional
+o String name optional
+o String gender optional
+o String married optional
+o String email optional
+o String address optional
+o String profileImage optional
+o String dob optional
+o String callerId optional
+o Integer credit optional
+--> subscription subscription optional
+--> individual referredBy optional
+o String referal optional
+o String location optional
+o String phoneNumber optional
+o String healthPoint optional
+o String bloodGroup optional
+o String refferred optional
+o DateTime subscriptionStartDate optional
+o DateTime subscriptionEndDate optional
+o Integer edgeEnable optional
+o String socketId optional
+o Family[] family optional
+o String[] HealthRecord optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -38,20 +42,172 @@ concept Family {
     o String relation
     -->individual profile
 }
-/* VITAL STAT ASSEST MODEL FEILDS*/
-asset surgical identified by vitalId {
-  o DateTime loginTime   optional
-  -->  individual individualId 
-  o String name
-  o String qualification 
-  o String email
-  o String phoneNumber
-  o Integer otp
-  o String city
-  o String [] language 
-  o String [] speciality
-  o Integer medicalCouncilNumber 
-  o DateTime createdDate optional
-  o DateTime updatedDate optional
-  o Integer enabled default = 1
+
+asset family identified by familyId {
+    o String familyId
+    o String individualId optional
+    o String relation optional
+    o String healthRecordType optional
+    o String medicalCondition optional
+    o Integer currentStatus optional
+    o SufferingDate SufferingDate optional
+    o Duration Duration optional
+    o Notes[] notes optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept SufferingDate {
+o String  start
+o String end
+}
+
+concept Duration {
+ o Integer years
+ o Integer months
+}
+
+concept Notes{
+o String title
+o String date
+}
+
+asset familyMember identified by profileId {
+    o String profileId
+    o String name optional
+    o String dob optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+
+asset medical identified by medicalId {
+    o String medicalId
+    o String individualId optional
+    o String sufferingFrom optional
+    o String healthRecordType optional
+    o String sympton optional
+    o String currentStatus optional
+    --> medication[] medicineId optional
+    o SufferingDate sufferingDate optional
+    o Medicine medicine optional
+    o Durations duration optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept Durations{
+ o Integer years
+ o Integer months
+ o Integer days 
+}
+
+concept Medicine {
+    o String medicineName
+    o String Dosage
+    o String frequency
+}
+
+asset medication identified by medicationId {
+   o String medicationId
+   --> individual individualId
+   o String  medicineName optional
+   o String  dosage optional
+   o String  days optional
+   o String medicationName optional
+   o String healthRecordType optional
+   o String frequency optional
+   o String adverseEffects   optional 
+   o Integer currentStus  optional
+   o String createdBy  optional
+   o String updatedBy  optional
+   o DateTime createdDate  optional
+   o DateTime updatedDate   optional
+   o Integer enabled default=1
+}
+
+asset immunization identified by immunizationId {
+    o String immunizationId
+    --> individual profileId optional
+    o String vaccine optional
+    o Integer ageGroup optional
+    o String healthRecordType  default="Immunization"
+    o String scheduleDate optional
+    o Integer isDone  default=1
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+asset allergies identified by allergyId {
+    o String allergyId
+    o String individualId optional
+    --> medication medicineId optional
+    o String startDate optional
+    o String  allergyCondition optional
+    o String  healthRecordType default="Allergies"
+    o String  severity optional
+    o TreatmentTaken[] treatmentTaken optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept TreatmentTaken{
+    o String  name
+    o String  date
+    o String  description
+}
+
+
+asset surgical identified by surgicalId {
+    o String surgicalId
+    o String individualId optional
+    o String  disease optional
+    o String dateOfDiagnosis optional
+    o String  helathRecordType optional
+    o String  currentStatus optional
+    o String  signsAndSympton optional
+    o String  otherInformation optional
+    o TreatmentDetails[] treatmentDetails optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
+}
+
+concept TreatmentDetails {
+     o String name
+     o String  date
+     o String description
+     o String reportType
+     o String[] fileId
+}
+
+asset vitalStats identified by vitalId {
+    o String vitalId
+    o DateTime loginTime optional
+    --> individual individualId optional
+    o String healthRecordType default="VitalStats"
+    o String statType optional
+    o String statValue optional
+    o String createdBy  optional
+    o String updatedBy  optional
+    o DateTime createdDate  optional
+    o DateTime updatedDate   optional
+    o Integer enabled default=1
 }
