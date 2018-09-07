@@ -4,12 +4,13 @@ import io.mefy.doctor.doctor
 import io.mefy.individual.individual
 import io.mefy.doctor.clinic
 import io.mefy.prescription.*
+
 /*********************PARTICIPANT USER-DOCTOR OR INDIVIDUAL******** **/
 participant User identified by userId{
-o String userId 
+o String userId
 o String email   optional
 o String phoneNumber 
-o Integer otp            optional
+o Integer otp      optional
 o Integer otpExpiresIn    optional
 o String role
 o String createdBy  optional
@@ -17,7 +18,6 @@ o String updatedBy  optional
 o DateTime createdDate  optional
 o DateTime updatedDate   optional
 o Integer enabled default=1
-
 }
 
 /**--> User userId   optional*/

@@ -21,6 +21,7 @@ asset doctor identified by doctorId {
   o String doctorId
   --> User userId  optional
   o String name  optional
+  o String phoneNumber optional
   o String gender  optional
   o String dob  optional
   o String profileImage  optional
@@ -42,6 +43,7 @@ asset doctor identified by doctorId {
   o Availability availability  optional
   o String credit default = "0"
   o String socketId optional
+  o String deviceId
   o String createdBy optional
   o String updatedBy  optional
   o DateTime createdDate optional
