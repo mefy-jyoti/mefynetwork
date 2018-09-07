@@ -21,6 +21,7 @@ asset doctor identified by doctorId {
   o String doctorId
   --> User userId  optional
   o String name  optional
+  o String phoneNumber optional
   o String gender  optional
   o String dob  optional
   o String profileImage  optional
