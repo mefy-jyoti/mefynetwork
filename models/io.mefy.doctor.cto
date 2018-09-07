@@ -1,7 +1,7 @@
 namespace io.mefy.doctor
 
 import io.mefy.commonModel.User
-import io.mefy.doctor.doctor
+
 
 /*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
 enum Availability {
