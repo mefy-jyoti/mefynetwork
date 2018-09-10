@@ -51,24 +51,6 @@ asset doctor identified by doctorId {
   o Integer enabled default = 1
 }
 
-
-/* DOCTOR REGISTRATION ASSEST MODEL FEILDS*/
-asset doctorRegistration identified by doctorId {
-  o String doctorId
-  o String name optional
-  o String qualification optional
-  o String email optional
-  o String phoneNumber optional
-  o Integer otp optional
-  o String city optional
-  o String [] language  optional
-  o String [] speciality optional
-  o Integer medicalCouncilNumber  optional
-  o DateTime createdDate optional
-  o DateTime updatedDate optional
-  o Integer enabled default = 1
-}
-
 /* CLINIC ASSEST MODEL FEILDS*/
 asset clinic identified by clinicId {
   o String clinicId
