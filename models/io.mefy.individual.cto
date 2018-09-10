@@ -7,7 +7,7 @@ import io.mefy.extra.subscription
 /**CHANEGES TO BE MADE**/
 asset individual identified by individualId {
 o String individualId
--->User userId 
+-->User userId optional
 o String name 
 o String gender 
 o String city
@@ -32,6 +32,7 @@ o DateTime subscriptionEndDate optional
 o Integer edgeEnable optional
 o String socketId optional
 o Family[] family optional
+o individual parent optional
 o String[] HealthRecord optional
 o String createdBy  optional
 o String updatedBy  optional
@@ -43,23 +44,6 @@ o Integer enabled default=1
 concept Family {
     o String relation
     -->individual profile
-}
-
-asset family identified by familyId {
-    o String familyId
-    o String individualId optional
-    o String relation optional
-    o String healthRecordType optional
-    o String medicalCondition optional
-    o Integer currentStatus optional
-    o SufferingDate SufferingDate optional
-    o Duration Duration optional
-    o Notes[] notes optional
-    o String createdBy  optional
-    o String updatedBy  optional
-    o DateTime createdDate  optional
-    o DateTime updatedDate   optional
-    o Integer enabled default=1
 }
 
 concept SufferingDate {
@@ -75,17 +59,6 @@ concept Duration {
 concept Notes{
 o String title
 o String date
-}
-
-asset familyMember identified by profileId {
-    o String profileId
-    o String name optional
-    o String dob optional
-    o String createdBy  optional
-    o String updatedBy  optional
-    o DateTime createdDate  optional
-    o DateTime updatedDate   optional
-    o Integer enabled default=1
 }
 
 
