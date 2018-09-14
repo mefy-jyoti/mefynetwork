@@ -4,7 +4,15 @@ import io.mefy.commonModel.User
 import io.mefy.extra.subscription
 
 
-/**CHANEGES TO BE MADE**/
+/*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
+enum Availability {
+  o Online
+  o Offline
+  o Busy
+}
+
+/** CHANEGES TO BE MADE **/
+
 asset individual identified by individualId {
 o String individualId
 -->User userId optional
@@ -18,6 +26,7 @@ o String married optional
 o String email optional
 o String address optional
 o String profileImage optional
+o Availability availability  optional
 o String callerId optional
 o Integer credit optional
 --> subscription subscription optional
