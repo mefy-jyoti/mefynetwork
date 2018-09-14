@@ -64,6 +64,7 @@ o String date
 
 asset medical identified by medicalId {
     o String medicalId
+    
     o String individualId optional
     o String sufferingFrom optional
     o String healthRecordType optional
