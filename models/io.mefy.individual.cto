@@ -13,7 +13,7 @@ o String gender
 o String city
 o String dob 
 o String phoneNumber 
-o String deviceId
+o String deviceId  optional
 o String married optional
 o String email optional
 o String address optional
@@ -42,9 +42,23 @@ o Integer enabled default=1
 }
 
 concept Family {
-    o String relation
-    -->individual profile
+    o Relation relation
+    -->individual individual
 }
+
+
+enum Relation{
+o Mother
+o Father
+o Brother
+o Sister
+o Maternal_Grandfather
+o Maternal_Grandmother
+o Paternal_Grandfather
+o Paternal_Grandmother
+o Spouse
+}
+
 
 concept SufferingDate {
 o String  start
