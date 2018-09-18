@@ -55,13 +55,13 @@ asset doctor identified by doctorId {
 asset clinic identified by clinicId {
   o String clinicId
   --> doctor doctorId optional
-  o String clinicName optional
-  o String phoneNumber optional
-  o String city optional
-  o String address optional
-  o String pin optional
-  o String fee optional
-  o WeekDays[] weekDays optional
+  o String clinicName 
+  o String phoneNumber 
+  o String city 
+  o String address 
+  o String pin 
+  o String fee 
+  o WeekDays[] weekDays 
   o  BookingStatus bookingStatus optional
   o String availability default = "open"
   o String createdBy optional
@@ -72,12 +72,18 @@ asset clinic identified by clinicId {
 }
 
 concept WeekDays {
-o String day
-o String startTime   regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
+o Days day
+o String startTime   regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/  //format is 00:00 24 hour format
 o String endTime     regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
 }
 
-// {
-//   "day":"sunday",
-//   "startTime":"3:03",
-//   "endTime":"5:02"}
+
+enum Days {
+  o Monday
+  o Tuesday
+  o Wednesday
+  o Thursday
+  o Friday
+  o Saturday
+  o Sunday
+}
