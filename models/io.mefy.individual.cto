@@ -203,11 +203,25 @@ asset vitalStats identified by vitalId {
     o DateTime loginTime optional
     --> individual individualId optional
     o String healthRecordType default="VitalStats"
-    o String statType optional
+    o statType statType optional
     o String statValue optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
     o DateTime updatedDate   optional
     o Integer enabled default=1
+}
+
+enum statType {
+   o bodyScale
+   o bp 
+   o glucometer
+   o ecg 
+   o spo2
+   o temperature
+   o gsr
+   o emg 
+   o airflow
+   o spirometer
+   o thyroid
 }
