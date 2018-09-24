@@ -87,14 +87,14 @@ o String date
 
 asset medical identified by medicalId {
     o String medicalId
-    o String individualId optional
-    o String sufferingFrom optional
-    o String healthRecordType optional
+    -->individual individualId optional
+    o String sufferingFrom optional 
+    o String healthRecordType default= "currentComplaint"
     o String sympton optional
     o String currentStatus optional
-    --> medication[] medicineId optional
+    --> medication[] medicineId optional 
     o SufferingDate sufferingDate optional
-    o Medicine medicine optional
+    o Medicine medicine optional  
     o Durations duration optional
     o String createdBy  optional
     o String updatedBy  optional
@@ -104,8 +104,8 @@ asset medical identified by medicalId {
 }
 
 concept Durations{
- o Integer years
- o Integer months
+ o Integer years 
+ o Integer months  
  o Integer days 
 }
 
