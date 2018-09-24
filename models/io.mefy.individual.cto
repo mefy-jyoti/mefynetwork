@@ -69,10 +69,7 @@ o Spouse
 }
 
 
-concept SufferingDate {
-o String  start
-o String end
-}
+
 
 concept Duration {
  o Integer years
@@ -113,6 +110,11 @@ concept Medicine {
     o String medicineName
     o String Dosage
     o String frequency
+}
+
+concept SufferingDate {
+o String  start
+o String end  optional
 }
 
 asset medication identified by medicationId {
