@@ -43,6 +43,10 @@ o String socketId optional
 o Family[] family optional
 --> individual parent optional
 o String[] HealthRecord optional
+o Boolean allergy optional
+o Boolean surgery optional
+o Boolean disease optional
+o Boolean familyMedical optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
