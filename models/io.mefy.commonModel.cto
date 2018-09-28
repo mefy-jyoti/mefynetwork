@@ -108,9 +108,10 @@ o String appointmentId
 --> individual individualId  
 o String clinicName  optional
 --> clinic clinicId  
-o clinicStatus status  optional
+o appointmentStatus status 
 o String patientName  optional
 o String eventName 
+
 o String eventDescription  optional
 o String appointmentType  
 o String appointmentTimeFrom  regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
@@ -124,10 +125,9 @@ o Integer enabled default=1
 }
 
 /* APPOINTMENT STATUS */
-enum clinicStatus{
-    o New
-    o Conformed
-    o Tentative
+enum appointmentStatus{
+    o Active
+    o Completed
     o Cancelled
 }
 
