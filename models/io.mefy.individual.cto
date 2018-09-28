@@ -41,8 +41,12 @@ o DateTime subscriptionEndDate optional
 o Integer edgeEnable optional
 o String socketId optional
 o Family[] family optional
-o individual parent optional
+--> individual parent optional
 o String[] HealthRecord optional
+o Boolean allergy optional
+o Boolean surgery optional
+o Boolean disease optional
+o Boolean familyMedical optional
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional
@@ -69,10 +73,7 @@ o Spouse
 }
 
 
-concept SufferingDate {
-o String  start
-o String end
-}
+
 
 concept Duration {
  o Integer years
@@ -87,14 +88,14 @@ o String date
 
 asset medical identified by medicalId {
     o String medicalId
-    o String individualId optional
-    o String sufferingFrom optional
-    o String healthRecordType optional
+    -->individual individualId optional
+    o String sufferingFrom optional 
+    o String healthRecordType default= "currentComplaint"
     o String sympton optional
     o String currentStatus optional
-    --> medication[] medicineId optional
+    --> medication[] medicineId optional 
     o SufferingDate sufferingDate optional
-    o Medicine medicine optional
+    o Medicine medicine optional  
     o Durations duration optional
     o String createdBy  optional
     o String updatedBy  optional
@@ -104,8 +105,8 @@ asset medical identified by medicalId {
 }
 
 concept Durations{
- o Integer years
- o Integer months
+ o Integer years 
+ o Integer months  
  o Integer days 
 }
 
@@ -113,6 +114,11 @@ concept Medicine {
     o String medicineName
     o String Dosage
     o String frequency
+}
+
+concept SufferingDate {
+o String  start
+o String end  optional
 }
 
 asset medication identified by medicationId {
@@ -201,11 +207,25 @@ asset vitalStats identified by vitalId {
     o DateTime loginTime optional
     --> individual individualId optional
     o String healthRecordType default="VitalStats"
-    o String statType optional
+    o statType statType optional
     o String statValue optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
     o DateTime updatedDate   optional
     o Integer enabled default=1
+}
+
+enum statType {
+   o bodyScale
+   o bp 
+   o glucometer
+   o ecg 
+   o spo2
+   o temperature
+   o gsr
+   o emg 
+   o airflow
+   o spirometer
+   o thyroid
 }

@@ -104,18 +104,18 @@ o Integer enabled default=1
 asset appointment identified by appointmentId {
 o String appointmentId
 --> eConsult eConsultId  optional
---> doctor doctorId  optional
---> individual individualId  optional
+--> doctor doctorId  
+--> individual individualId  
 o String clinicName  optional
---> clinic clinicId  optional
+--> clinic clinicId  
 o clinicStatus status  optional
 o String patientName  optional
-o String eventName optional
+o String eventName 
 o String eventDescription  optional
-o String appointmentType  optional
-o String appointmentTimeFrom  optional
-o String appointmentTimeTo  optional
-o DateTime appointmentDate  optional
+o String appointmentType  
+o String appointmentTimeFrom  regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
+o String appointmentTimeTo  regex=/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
+o DateTime appointmentDate  
 o String createdBy  optional
 o String updatedBy  optional
 o DateTime createdDate  optional

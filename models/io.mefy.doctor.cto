@@ -29,7 +29,7 @@ asset doctor identified by doctorId {
   o Integer eConsultFee  optional
   o String subscription optional
   o Integer practicingSince  optional
-  o String[] educationl optional
+  o String[] education optional
   o String email   optional
   o String registrationNumber  optional
   o String year  optional
@@ -46,6 +46,7 @@ asset doctor identified by doctorId {
   o String deviceId
   o String createdBy optional
   o String updatedBy  optional
+  o String appointmentDuration optional
   o DateTime createdDate optional
   o DateTime updatedDate optional
   o Integer enabled default = 1
