@@ -128,10 +128,11 @@ asset medication identified by medicationId {
    o String  dosage optional
    o String  days optional
    o String medicationName optional
+   o String medicationDate optional
    o String healthRecordType optional
    o String frequency optional
    o String adverseEffects   optional 
-   o Integer currentStus  optional
+   o Integer currentStatus  optional
    o String createdBy  optional
    o String updatedBy  optional
    o DateTime createdDate  optional
