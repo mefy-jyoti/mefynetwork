@@ -91,6 +91,7 @@ asset medical identified by medicalId {
     -->individual individualId optional
     o String sufferingFrom optional 
     o String healthRecordType default= "currentComplaint"
+    o Status status optional
     o String sympton optional
     o String currentStatus optional
     --> medication[] medicineId optional 
@@ -103,7 +104,10 @@ asset medical identified by medicalId {
     o DateTime updatedDate   optional
     o Integer enabled default=1
 }
-
+ enum Status{
+  o solved
+  o unsolved
+ }
 concept Durations{
  o Integer years 
  o Integer months  
