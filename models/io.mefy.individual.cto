@@ -184,10 +184,10 @@ concept TreatmentTaken{
 
 asset surgical identified by surgicalId {
     o String surgicalId
-    -->individual individualId optional
+    --> individual individualId optional
     o String  disease optional
     o String dateOfDiagnosis optional
-    o String  helathRecordType optional
+    o String  healthRecordType  default="Surgical"
     o String  currentStatus optional
     o String  signsAndSympton optional
     o String  otherInformation optional
