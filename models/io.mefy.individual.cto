@@ -146,7 +146,7 @@ asset medication identified by medicationId {
 
 asset immunization identified by immunizationId {
     o String immunizationId
-    --> individual profileId optional
+    --> individual individualId optional
     o String vaccine optional
     o Integer ageGroup optional
     o String healthRecordType  default="Immunization"
@@ -161,7 +161,7 @@ asset immunization identified by immunizationId {
 
 asset allergies identified by allergyId {
     o String allergyId
-    o String individualId optional
+    --> individual individualId optional
     --> medication medicineId optional
     o String startDate optional
     o String  allergyCondition optional
@@ -184,7 +184,7 @@ concept TreatmentTaken{
 
 asset surgical identified by surgicalId {
     o String surgicalId
-    o String individualId optional
+    -->individual individualId optional
     o String  disease optional
     o String dateOfDiagnosis optional
     o String  helathRecordType optional
