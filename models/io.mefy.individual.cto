@@ -147,8 +147,8 @@ asset medication identified by medicationId {
 asset immunization identified by immunizationId {
     o String immunizationId
     --> individual individualId optional
-    o vaccine vaccine optional
-    o Integer ageGroup optional
+    o Vaccine[] vaccine optional
+    o String ageGroup optional
     o String healthRecordType  default="Immunization"
     o Integer isDone  default=1
     o String createdBy  optional
@@ -158,7 +158,7 @@ asset immunization identified by immunizationId {
     o Integer enabled default=1
 }
  
-concept  vaccine{
+concept  Vaccine {
   o String vaccinename
   o String scheduleDate
 }
