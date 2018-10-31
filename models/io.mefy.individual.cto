@@ -88,10 +88,7 @@ enum recordType{
     o currentComplaint
     o medicalHistory
 }
-enum medicationStatus{
-    o On
-    o Off
-}
+
 
 
 asset medical identified by medicalId {
@@ -101,7 +98,7 @@ asset medical identified by medicalId {
     o recordType healthRecordType  default="currentComplaint"
     o Status status optional
     o String sympton optional
-    o medicationStatus currentStatus optional
+    o String currentStatus optional
     --> medication[] medicineId optional 
     o SufferingDate sufferingDate optional
     o Medicine medicine optional  
@@ -132,6 +129,10 @@ concept SufferingDate {
 o String  start
 o String end  optional
 }
+enum medicationStatus{
+    o On
+    o Off
+}
 
 
 asset medication identified by medicationId {
@@ -145,7 +146,7 @@ asset medication identified by medicationId {
    o String healthRecordType optional
    o String frequency optional
    o String adverseEffects   optional 
-   o Integer currentStatus  optional
+   o medicationStatus currentStatus  optional
    o String createdBy  optional
    o String updatedBy  optional
    o DateTime createdDate  optional
