@@ -84,13 +84,17 @@ concept Notes{
 o String title
 o String date
 }
+enum recordType{
+    o currentComplaint
+    o medicalHistory
+}
 
 
 asset medical identified by medicalId {
     o String medicalId
     -->individual individualId optional
     o String sufferingFrom optional 
-    o String healthRecordType default= "currentComplaint"
+    o recordType healthRecordType  default="currentComplaint"
     o Status status optional
     o String sympton optional
     o String currentStatus optional
@@ -124,6 +128,7 @@ concept SufferingDate {
 o String  start
 o String end  optional
 }
+
 
 asset medication identified by medicationId {
    o String medicationId
