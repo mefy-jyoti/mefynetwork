@@ -56,6 +56,7 @@ asset doctor identified by doctorId {
 asset clinic identified by clinicId {
   o String clinicId
   --> doctor doctorId optional
+  o String type default="actual"
   o String clinicName 
   o String phoneNumber 
   o String city 
