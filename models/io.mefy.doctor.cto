@@ -43,7 +43,7 @@ asset doctor identified by doctorId {
   o Availability availability  optional
   o String credit default = "0"
   o String socketId optional
-  o String deviceId
+  o String deviceId  optional
   o String createdBy optional
   o String updatedBy  optional
   o String appointmentDuration optional

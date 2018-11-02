@@ -17,9 +17,9 @@ asset individual identified by individualId {
 o String individualId
 -->User userId optional
 o String name 
-o String gender 
-o String city
-o String dob 
+o String gender optional
+o String city optional
+o String dob optional
 o String phoneNumber 
 o String deviceId  optional
 o String married optional
