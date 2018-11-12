@@ -33,7 +33,11 @@ o DateTime updatedDate   optional
 o Integer enabled default=1
 }
 
-
+/* ACCOUNT STATUS */
+enum accountStatus{
+    o Active
+    o Inactive
+    }
 /*******    ASSET ACCOUNT     *********/
 asset account identified by accountId {
 o String accountId
@@ -43,6 +47,7 @@ o String accountHolderName  optional
 o String ifscCode  optional
 o String accountName  optional
 o String accountType  optional
+o  accountStatus status default="Active"
 o kyc[] kycDoc      optional
 o String createdBy  optional
 o String updatedBy  optional
