@@ -24,6 +24,7 @@ asset advice identified by adviceId {
 
 asset lifeStyle identified by lifeStyleId {
   o String lifeStyleId 
+  o String advice optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
