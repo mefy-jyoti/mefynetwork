@@ -181,11 +181,11 @@ asset  prescription identified by prescriptionId {
     --> individual individualId  optional
     --> advice adviceId  optional
     --> lifeStyle  lifeStyleId  optional
-    --> prescribeMedicine  medicineId    optional
+    --> prescribeMedicine medicineId    optional
     --> diagnosis  diagnosisId optional
-    --> instruction  specificInstructionId   optional
+    --> instruction specificInstructionId   optional
     --> recommended recommendedId   optional
-    o prescriptionStatus status optional
+    o prescriptionStatus status  default='Consulting'
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
