@@ -62,7 +62,7 @@ asset clinic identified by clinicId {
   o String phoneNumber 
   o String city 
   o String address 
-  o String pin 
+  o String pin optional
   o String fee 
   o WeekDays[] weekDays 
   o  BookingStatus bookingStatus optional
