@@ -4,3 +4,10 @@ query userPharmacy{
         SELECT io.mefy.pharmacy.UserPharmacy
             WHERE (_$userID == user)
 }
+
+query alldoctors
+{
+  description:"get list of all doctors"
+  statement:
+  SELECT io.mefy.doctor.doctor
+}
