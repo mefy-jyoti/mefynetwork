@@ -178,7 +178,9 @@ asset allergies identified by allergyId {
     o String allergyId
     --> individual individualId optional
     --> medication medicineId optional
-    o String startDate optional
+    o String allergySince optional
+    o String allergyType optional
+    o String allergyWith optional
     o String  allergyCondition optional
     o String  healthRecordType default="Allergies"
     o String  severity optional
