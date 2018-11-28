@@ -145,6 +145,8 @@ asset medication identified by medicationId {
    o String  days optional
    o String medicationName optional
    o String medicationDate optional
+   o String startDate optional
+   o String endDate optional
    o String healthRecordType optional
    o String frequency optional
    o String adverseEffects   optional 
@@ -212,6 +214,7 @@ asset surgical identified by surgicalId {
     o String  signsAndSympton optional
     o String  otherInformation optional
     o TreatmentDetails[] treatmentDetails optional
+    o String treatmentDetailsFile optional
     o String createdBy  optional
     o String updatedBy  optional
     o DateTime createdDate  optional
