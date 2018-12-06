@@ -213,7 +213,7 @@ asset surgical identified by surgicalId {
     o String  currentStatus optional
     o String  signsAndSympton optional
     o String  otherInformation optional
-    o TreatmentDetails[] treatmentDetails optional
+    o String treatmentDetails optional
     o String treatmentDetailsFile optional
     o String createdBy  optional
     o String updatedBy  optional
