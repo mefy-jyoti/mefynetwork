@@ -58,6 +58,7 @@ o DateTime updatedDate   optional
 o Integer enabled default=1
 }
 
+// family concept
 concept Family {
     o Relation relation
     -->individual individual
