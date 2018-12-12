@@ -45,6 +45,8 @@ asset doctor identified by doctorId {
   o String socketId optional
   o String deviceId  optional
   o String token optional
+  o String webtoken optional
+  o String mobiletoken optional
   o String createdBy optional
   o String updatedBy  optional
   o String appointmentDuration optional

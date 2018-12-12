@@ -42,6 +42,8 @@ o DateTime subscriptionStartDate optional
 o DateTime subscriptionEndDate optional
 o Integer edgeEnable optional
 o String socketId optional
+o String webtoken optional
+o String mobiletoken optional
 o Family[] family optional
 --> individual parent optional
 o String[] HealthRecord optional
