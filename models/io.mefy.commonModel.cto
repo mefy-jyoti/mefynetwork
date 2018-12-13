@@ -206,3 +206,14 @@ enum prescriptionStatus{
     o Processed
     o Locked
 }
+
+//CALLER HOSTORY MODEL  
+asset callhistory identified by callId{
+ o String callId
+ o String doctorId 
+ o String individualId 
+ o String file optional
+ o String startTime  optional
+ o String endTime  optional
+
+}
