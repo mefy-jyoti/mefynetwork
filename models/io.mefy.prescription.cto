@@ -43,6 +43,7 @@ asset prescribeMedicine identified by prescribeMedicineId {
   o String dosage optional
   o String days optional
   o String instructions optional
+  o String frequency optional
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional

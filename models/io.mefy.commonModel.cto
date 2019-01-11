@@ -185,12 +185,12 @@ asset  prescription identified by prescriptionId {
     --> appointment appointmentId  optional
     --> doctor doctorId  optional
     --> individual individualId  optional
-    --> advice adviceId  optional
-    --> lifeStyle  lifeStyleId  optional
-    --> prescribeMedicine medicineId    optional
-    --> diagnosis  diagnosisId optional
-    --> instruction specificInstructionId   optional
-    --> recommended recommendedId   optional
+    --> advice[] adviceId  optional
+    --> lifeStyle[]  lifeStyleId  optional
+    --> prescribeMedicine[] medicineId    optional
+    --> diagnosis[]  diagnosisId optional
+    --> instruction[] specificInstructionId   optional
+    --> recommended[] recommendedId   optional
     o prescriptionStatus status  default='Consulting'
     o String createdBy  optional
     o String updatedBy  optional
