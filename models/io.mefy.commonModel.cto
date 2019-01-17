@@ -17,6 +17,7 @@ o String updatedBy  optional
 o DateTime createdDate  optional
 o DateTime updatedDate   optional
 o Integer enabled default=1
+o Integer number optional
 }
 
 /**--> User userId   optional*/

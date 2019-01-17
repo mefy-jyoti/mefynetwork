@@ -86,7 +86,7 @@ asset recommended identified by recommendedId {
   Instructions model
 **/
 
-
+// instruction asset
 asset instruction identified by instructionId {
   o String instructionId
   o String advice optional
