@@ -1,7 +1,7 @@
 namespace io.mefy.doctor
 
 import io.mefy.commonModel.User
-
+import io.mefy.receptionist.receptionist
 
 /*** AN ENUMERATED TYPE FOR DOCTOR PROFILE  FIELD */
 enum Availability {
@@ -59,21 +59,23 @@ asset doctor identified by doctorId {
 asset clinic identified by clinicId {
   o String clinicId
   --> doctor doctorId optional
-  o String type default="actual"
-  o String clinicName 
+  --> receptionist receptionist optional
+  o String  clinicName 
   o String phoneNumber 
   o String city 
   o String address 
   o String pin optional
   o String fee 
   o WeekDays[] weekDays 
-  o  BookingStatus bookingStatus optional
+  o String type default = "actual"
+  o BookingStatus bookingStatus optional
   o String availability default = "open"
   o String createdBy optional
   o String updatedBy optional
   o DateTime createdDate optional
   o DateTime updatedDate optional
   o Integer enabled default = 1
+
 }
 
 concept WeekDays {

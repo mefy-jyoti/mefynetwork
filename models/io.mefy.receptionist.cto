@@ -1,0 +1,16 @@
+namespace io.mefy.receptionist
+
+
+import io.mefy.doctor.doctor
+import io.mefy.doctor.clinic
+
+participant receptionist identified by receptionId{
+o String receptionId
+o String name
+o String phoneNumber
+--> doctor doctorId
+--> clinic clinicId
+o DateTime createdDate optional
+o DateTime updatedDate optional
+o Integer enabled default = 1
+}
